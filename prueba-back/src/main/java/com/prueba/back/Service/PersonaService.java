@@ -8,5 +8,5 @@ import com.prueba.back.Model.Persona;
 public interface PersonaService {
 	
 	public ResponseEntity<JSONResponse>save(Persona persona);
-
+	
 }
