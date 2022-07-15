@@ -1,0 +1,6 @@
+1- para poder crear un genero de una persona ejecutar las insercciones que se encuentran en la base de datos ("base"),
+posteriemnte ejecutar los tipos de rol,
+
+2- se podria generar un flayway para automaticamente iniclizar con los roles y generos y unas inserciciones 
+
+3- sobre el diseño lo sigo planteando solo que no me daba tiempo ya que tenia algunos errores :( 

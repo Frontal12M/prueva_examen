@@ -1,7 +1,6 @@
 package com.prueba.back.Model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -11,9 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,22 +23,28 @@ import lombok.ToString;
 @ToString
 @Builder
 @Entity
-@Table(name = "factura")
-public class Factura implements Serializable {
-	
+@Table(name = "product")
+public class Producto implements Serializable{
+
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "id_factura")
-	private Integer idFactura;
+	@Column(name = "id_Producto")
+	private Integer idProducto;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss aa", timezone = "America/Mexico_City")
-	@Column(name = "created_date")
-	private Date createdDate;
 	
-	@Size(max = 45)
-	@Column(name = "monto")
-	private String monto;
-
+	@Column(name = "descripccion")
+	private String descripccion;
+	
+	@Column(name = "cantidad")
+	private Integer cantidad;
+	
+	@Column(name = "precio")
+	private Double precio;
+	
+	
+	
+	
 }

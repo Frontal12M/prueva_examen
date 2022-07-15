@@ -1,4 +1,4 @@
-package com.priv.iotcontroldevices.utilerias;
+package com.prueba.back.utilerias;
 
 public class JSONResponse {
 

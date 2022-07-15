@@ -7,23 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.priv.iotcontroldevices.utilerias.JSONResponse;
-import com.prueba.back.Service.prueba1Service;
+import com.prueba.back.Model.UserType;
+import com.prueba.back.Service.UserTypeService;
+import com.prueba.back.utilerias.JSONResponse;
 
-@RestController 
-@RequestMapping("/pruebas")
-public class prueba1Controller {
-	
+@RestController
+@RequestMapping("/userType")
+public class UserTypeController {
+
 	@Autowired
-	prueba1Service service;
-	
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ResponseEntity<JSONResponse> save(@RequestBody String json) {
+	UserTypeService serviceT;
 
-		return service.save(json);
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	public ResponseEntity<JSONResponse> add(@RequestBody UserType Type) {
+		return serviceT.add(Type);
 	}
-	
-	
-	
 
 }

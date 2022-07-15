@@ -1,6 +1,7 @@
 package com.prueba.back.Model;
 
 import java.io.Serializable;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -25,32 +27,33 @@ import lombok.ToString;
 @ToString
 @Builder
 @Entity
-@Table(name = "persona")
-public class Persona implements Serializable {
+@Table(name = "user_s")
+public class User implements Serializable {
+
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
-	@Column(name = "id_persona")
-	private Integer idPersona;
+	@Column(name = "id_user")
+	private Integer idUser;
 
-	@Size(max = 100)
-	@Column(name = "nombre")
-	private String nombre;
+	@Size(max = 45)
+	@Column(name = "email")
+	private String email;
 
-	@Size(max = 100)
-	@Column(name = "apellidoPaterno")
-	private String apellidoP;
+	@Column(name = "passord")
+	private String password;
 
-	@Size(max = 100)
-	@Column(name = "apellidoMaterno")
-	private String apellidoM;
+	@Column(name = "token_user")
+	private String token;
 
-	@Size(max = 100)
-	@Column(name = "identificacion")
-	private String identifiacion;
-
-	@JoinColumn(name = "fk_factura", referencedColumnName = "id_factura")
+	@JoinColumn(name = "fk_user_type", referencedColumnName = "id_user_type")
 	@ManyToOne(optional = true)
-	private Factura fkFactura;
+	private UserType fkUserType;
+
+	@JoinColumn(name = "fk_user_info", referencedColumnName = "id_user_info")
+	@OneToOne(optional = false)
+	private UserInfo fkUserInfo;
+
 }

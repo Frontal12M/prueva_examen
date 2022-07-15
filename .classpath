@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="prueba-back/src/main/java"/>
+	<classpathentry kind="src" path="prueba-back/src/test/java"/>
+	<classpathentry kind="lib" path="prueba-back/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="output" path="prueba-back/target/classes"/>
+</classpath>
